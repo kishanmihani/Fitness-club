@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <title>Service Page</title>
+  </head>  
+  <style>
+      #navbar{
+                    display:flex;
+                    
+                }
+                #container{
+        display:flex;
+        flex-direction: row;
+        justify-content:space-evenly ;
+    }
+    li{
+        padding:20px;
+        font-weight: bold; 
+        font-family: Arial;
+        color:white;
+    }
+                .headerone{
+                    text-decoration: none;
+                    list-style-type: none;
+                    margin:0%;
+                    padding: 0%;
+                    display: flex;
+                    margin-top: 30px;;
+                }
+                .headerone li a{
+                    font-weight: bold;
+                    font-size: 1.2em;
+                    padding: 0 15px;
+                }
+                input[type=text],input[type=date],textarea[type=text]{
+        width:100%;
+        border:2px solid #aaa;
+        border-radius:4px;
+        margin:8px 0;
+        outline:none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: .3s;
+        }
+
+        input[type=text]:focus,input[type=date]:focus,textarea[type=text]:focus{
+            border-color: dodgerblue;
+            box-shadow: 0 0 8px 0 dodgerblue;
+        }
+        .select{
+            padding:8px 12px;
+            color:#333333;
+            color:white;
+            background-color: black;
+            border:1px solid  #dddddd;
+            cursor: pointer;
+            border-radius: 5px;
+            
+           
+        }
+        .select:focus,.select:hover{
+            outline:none;
+            border:1px solid #bbbbbb;
+        }
+        .select option{
+            background: black;
+            font-weight: bold;
+            margin:5px;
+        }
+  </style>
+  <script>
+                           function fun(){
+    swal("Create Account","Enter your mobile number :","success", {
+  content: "input",
+})
+.then((value) => {
+  swal(`Please correct Number: ${value}`);
+});
+}
+function Sand(){
+    swal("Submit","Your all imformation Save","success")
+}
+  </script>
+  <body>
+    <div>
+        <header style="background-color:black; color:white;">
+            
+            <div id="navbar">
+              <a><img src="images/man-and-woman-fitness-silhouette-character-vector-4820662.jpg" style="text-decoration:none;height:85px;"><i style="color:rgba(226, 131, 42, 0.884);font-size: 2.8em;top: 0%;font-weight: bolder;margin-top: 0px;">CLUB</i></a>
+              <ul class="headerone">
+                <li><a href="HomePage.html" style="text-decoration:none;color:white">Home</a></li>
+                <li><a href="about.html" style="text-decoration:none;color:white" >ABOUT US</a></li>
+                <li><a href="javascript:void()" style="text-decoration:none;color:rgb(25, 25, 88)">SERVICE</a></li>
+                <li><a href="contact.html" style="text-decoration:none;color:white" >CONTACT</a></li>
+              </ul> 
+              <ul class="headerone">
+                  <li>
+                     
+                    <a class="bi bi-geo-alt"></a><select class="select">
+                        <option disabled selected>Location</option>
+                        
+                        <option>Bangalore</option>
+    
+    <option>Delhi</option><option>Hyderabad</option><option>Mumbai</option><option>Ranchi</option><option>Dehradun</option><option>Bhubaneswar</option><option>Jabalpur</option><option>Vijayawada</option><option>Chennai</option><option>Visakhapatnam</option><option>Lucknow</option><option>Agra</option><option>Kanpur</option><option>Indore</option><option>Coimbatore</option><option>Mangalore</option><option>Bhopal</option><option>Nagpur</option>
+    <option>Jammu</option><option>Surat</option><option>Ludhiana</option><option>Kota</option><option>Chandigarh Tricity</option><option>Mysore</option><option>Ahmedabad</option>
+                        
+                        </select>&nbsp;&nbsp;&nbsp;
+                        <button style="background-color:black;color:white;border: 1px  solid white;padding: 10px;border-radius: 15%;font-weight: bold;font-style: italic;">GET APP</button>
+                        
+                        <button onclick="fun()" class="bi bi-person" style="font-size:20px;margin-left:5px;color:white;font-weight:bold;background:black;border:0">Person</button>
+                      
+                  </li>
+              </ul> 
+          </div>
+          </header>
+        </div>
+        
+        <main>
+            <h1 >Support Network</h1>
+            <hr>
+            <div style="font-family:arial;display:flex">
+               
+                <div style="width:80%;margin-left: 4%;">
+                    <h2 style="color:rgb(17, 17, 243)">National wide Service - round the clock</h2>
+                    <p><strong> Help is a Support:</strong></p>
+                    <p>With FITNESS CLUB, picking the right equipment is not difficult. We stock the best and most technologically advanced equipment from all over the world giving you a wide variety of choice.
+
+                        Not just this. We understand that picking the right fit for you from the equipment might be hard and we have qualified fitness professionals at each store to guide you to make an informed choice! We channel our expertise to prioritise utility over cost because we understand that every customer has different needs.
+                        
+                        With the best global brands as our partners, it’s only natural that world-class service follows.
+                        </p>
+                    <p><strong> Creating Fitness Gurus:</strong></p>
+
+                        <p>Trainers are the most important contact points in any fitness centre. Our train the trainer program includes certifications from leading international fitness brands like Octane and mentors gym trainers to customise the right workouts on the right machine for every individual.</p>
+                    <h4>Fitness Club difference</h4>
+                    <p><strong> 01. Care:</strong></p>
+                    <p>Providing the best fitness solutions does not end with sales. We take our commitment to fitness very seriously and our responsibility does not stop at just selling the equipment. With highly specialised after-sales service solutions, we also undertake assembling and helping maintain the equipment long after its purchase.
+
+                        Our equipment is sourced from the best brands all over the world and it is imperative that it is maintained properly. With a team of qualified specialists and engineers to troubleshoot and respond to customer queries, we take care of every piece of equipment sold.</p>
+                    
+                    <p><strong>02. Ultimate Experience:</strong></p>
+                    <p>Our Experience Centre in Chennai is the first of its kind in India. We believe that with fitness equipment that you are bound to use for a very long time, it is important to try it and feel comfortable before making that final purchase decision. Offering a unique fitness experience for our customers, this centre drives our philosophy of "try and buy". This state-of-the-art facility has an in-house team of qualified trainers and experts to address all fitness needs.
+
+                        Customers can experience first-hand all the fitness services, equipment and programs we have to offer. This gives the customer an opportunity to invest in something only when they are fully satisfied!</p>
+                    </div>
+                    <div>
+                        <form style="padding: 20px;"><fieldset style="background-color:rgb(44, 22, 63);border-radius: 10%;">
+                        <legend style="color:blue;text-align: center;background-color:white;padding: 10px;"><strong> Service Request</strong></legend>
+                         <label style="color:white;font-weight: bold;"> &nbsp;&nbsp;Model/course Name :</label>
+                            <input type="text">
+                         <label style="color:white;font-weight: bold;">Date of Purchase: </label>
+                         <input type="date">
+                         <label style="color:white;font-weight: bold;">Serial No: </label>
+                         <input type="text">
+                         <p style="color:blue;text-align: center;"><strong> Customer INFORMATION</strong></p>
+                         <label style="color:white;font-weight: bold;">Email : </label>
+                         <input type="text">
+                         <label style="color:white;font-weight: bold;">Phone No:  </label>
+                         <input type="text">
+                         <dt><label style="color:white;font-weight: bold;">Address.  </label></dt>
+                         <dd><textarea type="text" style="width:100%;height: 100px;"></textarea></dd>
+                         <dt><label style="color:white;font-weight: bold;">Complaint.  </label></dt>
+                         <dd><textarea type="text" style="width:100%;height: 100px;"></textarea></dd>
+                         <div style="text-align:center"><button type="submit" style="color:white;background-color:blue;width:70px;
+                         height:40px;border-radius: 25%;font-size: 18px;border:0px;" onclick="Sand()" ><strong> Send</strong></button></div>
+                        </fieldset></form>
+                    </div>
+            </div >
+            <div style="padding:10px;background-color:rgb(38, 38, 77);display:flex;justify-content: space-between;">
+            <div style="padding:10px;background-color:rgb(38, 38, 77);margin-left:10%">
+                <lable style="color:white;font-weight: bold;font-size: 20px;">Get fitness Tipes to email:&nbsp;&nbsp;&nbsp;&nbsp; </lable>
+                <input type="text" style="width:250px;border:2px solid black;border-top: 0;border-right: 0;border-left: 0;background-color: transparent;">
+                
+            </div>
+            <div style="color:white;margin-right:10%">
+                <h2><i class="bi bi-facebook"> </i>&nbsp; <i class="bi bi-instagram"> </i>&nbsp; <i class="bi bi-linkedin"> </i>&nbsp; <i class="bi bi-pinterest"> </i>&nbsp; <i class="bi bi-youtube">  </i>&nbsp;<i class="bi bi-plus"></i></h2>
+            </div>
+            </div>
+        </main>
+        <div>  
+        <footer style="background:black">
+            <div id="container">
+                <div id="">
+                    <ul style="list-style:none;text-align:center;width:200px"><li style="color:rgb(81, 255, 0);font-weight: bold; font-style: italic; font-size: 20px;top:0%;"><img src="images/logo.jpg" style="border-radius:50%; width:120px; ;border: 1px solid black;text-align:center "></li>
+                        <li style="font-style:italic;">At Fitness, we make group workout fun, daily food healthy & tasty, mental fitness easy with yoga & medical, meditation & lifestyle care hassle-free.#Be Better Every Day.</li>
+                    
+                    </ul>
+                </div>
+                <div>
+                    <ul style="list-style:none;margin-top: 100px;">
+
+                    <li><a href="about.html" style="color:white;text-decoration:none">About</a></li>
+                    <ul>
+                        <li>Mission</li>
+                        <li>Information</li>
+                        <li>Member & trainer</li>
+                    </ul>
+                    
+                    </ul>
+                </div>
+                <div >
+                <ul style="list-style:none;margin-top: 100px;">
+                    <li><a href="Service1.html" style="color:white;text-decoration:none"> Service</a></li>
+                    <ul>
+                        <li>Help support</li>
+                        <li>Creating Fitness </li>
+                        <li>Fitness Difference</li>
+                    </ul>
+                </ul>
+                </div>
+                <div>
+                    <ul style="list-style:none;margin-top: 100px;">
+                    <li><a href="contact.html" style="color:white;text-decoration:none">conatct us</a></li>
+                    <ul>
+                        <li>Address</li>
+                        <li>Email id</li>
+                        <li>phone no.</li>
+                    </ul>
+                    </ul>
+                </div>
+                
+            </div><hr>
+            <div>
+            <p style="text-align:center; color:aliceblue; font-size: 27px; font-weight: bolder;font-style: italic;">Share And Download Now</p>
+            <ul style="list-style-type: none; display: flex;justify-content: space-around;" >
+                <li><button style="font-size: 20px; font-style: italic;font-weight: bold;background-color: white;border:0px;border-radius: 12.5%;text-align: center;"><img src="images\app-store-logo-transparent-5.png" width="52px" height="30px">App Store</button></li>
+                <li style="color:white;font-size: 20px;"><i class="bi bi-facebook"> </i>&nbsp; <i class="bi bi-instagram"> </i>&nbsp; <i class="bi bi-linkedin"> </i>&nbsp; <i class="bi bi-pinterest"> </i>&nbsp; <i class="bi bi-youtube">  </i></li>
+            <li><button style="font-size: 20px; font-style: italic;font-weight: bold;background-color: white;border:0px;border-radius: 12.5%;text-align: center;"><img src="images/Bildschirmfoto_2018-09-11_um_08-56d7d3344e2951dc.webp" width="52px" height="30px">Google Play</button></li>
+            </ul></div>
+            
+            <div style="background-color:rgb(35, 8, 61)">
+            <p style="text-align:center;color:white">&copy;2022-2024 All right  resvered FITNESS CLUB</p>
+            </div>
+        </footer>
+    </div>
+  </body>
+</html>
