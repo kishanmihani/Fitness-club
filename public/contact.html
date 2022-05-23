@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <!-- <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css"> -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact page</title>
+        <style>
+            #navbar{
+                    display:flex;
+                    
+                }
+                #container{
+                    display:flex;
+        flex-direction: row;
+        justify-content:space-evenly ;
+    }
+    li{
+        padding:20px;
+        font-weight: bold; 
+        font-family: Arial;
+        color:white;
+    }
+                .headerone{
+                    text-decoration: none;
+                    list-style-type: none;
+                    margin:0%;
+                    padding: 0%;
+                    display: flex;
+                    margin-top: 30px;;
+                }
+                .headerone li a{
+                    font-weight: bold;
+                    font-size: 1.2em;
+                    padding: 0 15px;
+                }
+            *{
+                margin:0;
+                padding: 0;
+                font-family: Arial,sans-serif;
+                box-sizing: border-box;
+            }
+            .contact{
+                position: relative;
+                min-height: 100vh;
+                padding: 50px 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background:url(images/respsation2.jpg);
+                background-size: cover;
+            }
+            .contact .content{
+                min-width: 800px;
+                text-align: center;
+            }
+            .contact .content h2{
+                font-size: 36px;
+                font-weight: 500;
+                color:#fff;
+            }
+            .contact .content p{
+                /* font-size: 36px; */
+                font-weight: 300;
+                color:#fff;
+            }
+            .container{
+                width:100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top:30px;
+            }
+            .container .contactInfo{
+                width:50%;
+                display: flex;
+                flex-direction: column;
+            }
+            .container .contactInfo .box{
+                position: relative;
+                padding: 20px 0;
+                display: flex;
+            }
+            .container .contactInfo .box .icon{
+                min-width: 60px;
+                height:60px;
+                background-color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                font-size: 22px;;
+            }
+            .container .contactInfo .box .text{
+                display: flex;
+                font-size: 16px;
+                color: #fff;
+                margin-left: 20px;
+                flex-direction: column;
+                font-weight: 300;
+            }
+            .container .contactInfo .box .text h3{
+                font-weight: 500;
+                color:#00bcd4;
+            }
+            .ContactFrom{
+                background: #fff;
+                width:40%;
+                padding: 40px;
+            }
+            .ContactFrom h2{
+                color:#333;
+                font-size: 30px;
+                font-weight: 500;
+            }
+            .ContactFrom .inputBox{
+                width:100%;
+                position: relative;
+                margin-top: 10px;
+            }
+            .ContactFrom .inputBox input,textarea{
+                width:100%;
+                padding: 5px 0;
+                border:none;
+                font-size: 16px;
+                margin: 10px 0;
+                border-bottom: 2px solid black;
+                outline: none;
+                resize: none;
+            }
+            .ContactFrom .inputBox span{
+                position: absolute;
+                left:0;
+                padding: 5px 0;
+                border:none;
+                font-size: 16px;
+                color:rgb(14, 13, 13);
+                transition: 0.5s;
+                pointer-events: none;
+            }
+            
+            .ContactFrom .inputBox input:focus ~ span,
+            .ContactFrom .inputBox input:valid ~ span,
+            .ContactFrom .inputBox textarea:focus ~span,
+            .ContactFrom .inputBox textarea:valid ~ span
+            {
+                color:#e91e61;
+                font-size: 12px;
+                transform: translateY(-20px);
+            }
+            .ContactFrom .inputBox input[type="submit"]{
+                color:white;
+                background-color: #00bcd4;
+                border:none;
+                padding:10px;
+                width:100px;
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            @media (max-width:991px){
+                 .contact{
+                     padding: 50px;
+                 }
+                 .container{
+                     flex-direction: column;
+                 }
+                 .container .contactInfo ,.ContactFrom{
+                     width:100%;
+                 }
+            }
+
+            #navbar{
+                    display:flex;
+                    
+                }
+                select{
+             padding:5px ;
+            border-radius: 5px;
+            
+            border:1px solid  #dddddd;
+            cursor: pointer;
+            border-radius: 5px; 
+            
+            outline: 0;
+            box-shadow: none;
+            border: 0!important;
+            background-color: rgb(252, 246, 246);
+            background-image: '\F3E8';
+            overflow: hidden;       
+            border-radius: .25em;    
+            flex:1;
+            cursor: pointer;
+        }
+         
+      
+        nav {
+        position:fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: black;
+        box-sizing: border-box;
+
+        align-items: center;
+        transform: .5s;
+    }      
+        </style>
+        <script>
+                                 function fun(){
+    swal("Create Account","Enter your mobile number :","success", {
+  content: "input",
+})
+.then((value) => {
+  swal(`Please correct Number: ${value}`);
+});
+}
+
+
+var lastScrollTop = 0;
+    navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", function () {
+        var scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            navbar.style.top = "-90px";
+        } else {
+            navbar.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    })
+
+        </script>
+    </head>
+    <body>
+        <header style="background-color:black; color:white;height:90px">
+            
+            <nav id="navbar">
+              <a><img src="images/man-and-woman-fitness-silhouette-character-vector-4820662.jpg" style="text-decoration:none;height:85px;"><i style="color:rgba(226, 131, 42, 0.884);font-size: 2.8em;top: 0%;font-weight: bolder;margin-top: 0px;">CLUB</i></a>
+              <ul class="headerone">
+                <li><a href="HomePage.html" style="text-decoration:none;color:white" class="bi bi-house-door">Home</a></li>
+                <li><a href="about.html" style="text-decoration:none;color:white" class="bi bi-intersect">ABOUT </a></li>
+                <li><a href="Service1.html" style="text-decoration:none;color:white" class="bi bi-asterisk">SERVICE</a></li>
+                <li><a href="javascript:void()" style="text-decoration:none;color:rgb(29, 29, 245)" class="bi bi-phone">CONTACT</a></li>
+              </ul> 
+              <ul class="headerone">
+                  <li>
+                    <select class="select">
+                        <option disabled selected>Location</option>
+                        
+                        <option>Bangalore</option>
+    
+    <option>Delhi</option><option>Hyderabad</option><option>Mumbai</option><option>Ranchi</option><option>Dehradun</option><option>Bhubaneswar</option><option>Jabalpur</option><option>Vijayawada</option><option>Chennai</option><option>Visakhapatnam</option><option>Lucknow</option><option>Agra</option><option>Kanpur</option><option>Indore</option><option>Coimbatore</option><option>Mangalore</option><option>Bhopal</option><option>Nagpur</option>
+    <option>Jammu</option><option>Surat</option><option>Ludhiana</option><option>Kota</option><option>Chandigarh Tricity</option><option>Mysore</option><option>Ahmedabad</option>
+                        
+                        </select>&nbsp;&nbsp;&nbsp;
+                        <button style="background-color:black;color:white;border: 1px  solid white;padding: 10px;border-radius: 15%;font-weight: bold;font-style: italic;">GET APP</button>
+                        <button   style="font-size:13px;margin-left:2px;color:red;font-weight:bold;background:white;border:0;border-radius: 5px;padding: 5px;;"><a href="registration.html" style="text-decoration:none;color:red">Register<span class="bi bi-person-fill " style="color:black;font-size: medium;"></span>Login</a></button>
+                        <!-- <button onclick="fun()" class="bi bi-person" style="font-size:20px;margin-left:5px;color:white;font-weight:bold;background:black;border:0">Person</button> -->
+                  </li>
+              </ul> 
+          </nav>
+          </header>
+
+         <section  class="contact">
+         <div class="content">
+             <h2>Contact Us</h2>
+              <p style="margin:2%;color:rgb(62, 247, 247)">ALL Fitness Club Office Contact details Please CheckOut.</p>
+         </div>
+
+
+         <div class="container">
+           <div class="contactInfo" >
+            <div class="box">
+                <div class="icon"><img src="images/geo-location-pin-vector-icon.jpg" height="40" width="40" style="top: 5px;border-radius: 25%;"></div>
+                <div class="text">
+                    <h3>Address</h3>
+                    <p> 4671 sugar Camp Road,<br>
+                     Owatonna, M.P.<br>
+                 Pincode:450001</p>
+
+                </div> 
+            </div>
+
+            <div class="box">
+                <div class="icon">&#128231;</div>
+                <div class="text">
+                    <h3> Email</h3>
+                    <p>  Kishanmihani918@mail.com</p>
+
+                </div> 
+            </div>
+
+            <div class="box">
+                <div class="icon">&#128222;</div>
+                <div class="text">
+                    <h3> Contact Number</h3>
+                    <p>  +91 9977305440</p>
+
+                </div> 
+            </div>
+            
+ </div>
+
+ <div class="ContactFrom">
+<form>
+    <h2>Send Message</h2>
+    <div class="inputBox">
+        <input type="text" required="required" name="">
+        <span>Full Name</span>
+    </div>
+
+    <div class="inputBox">
+        <input type="text" required="required" name="">
+        <span>Email</span>
+    </div>
+
+    <div class="inputBox">
+        <textarea type="text" required="required" name=""></textarea>
+        <span>Enter your Message</span>
+    </div>
+
+    <div class="inputBox">
+        <input type="submit" value="Sand">
+    </div> 
+</form>
+ </div>
+         </div>
+         </section>
+         <div>  
+            <footer style="background:black">
+                <div id="container">
+                    <div id="">
+                        <ul style="list-style:none;text-align:center;width:200px"><li style="color:rgb(81, 255, 0);font-weight: bold; font-style: italic; font-size: 20px;top:0%;"><img src="images/logo.jpg" style="border-radius:50%; width:120px; ;border: 1px solid black;text-align:center "></li>
+                            <li style="font-style:italic;">At Fitness, we make group workout fun, daily food healthy & tasty, mental fitness easy with yoga & medical, meditation & lifestyle care hassle-free.#Be Better Every Day.</li>
+                        
+                        </ul>
+                    </div>
+                    <div>
+                        <ul style="list-style:none;margin-top: 100px;">
+    
+                        <li><a href="about.html" style="color:white;text-decoration:none">About</a></li>
+                        <ul>
+                            <li>Mission</li>
+                            <li>Information</li>
+                            <li>Member & trainer</li>
+                        </ul>
+                        
+                        </ul>
+                    </div>
+                    <div >
+                    <ul style="list-style:none;margin-top: 100px;">
+                        <li><a href="Service1.html" style="color:white;text-decoration:none"> Service</a></li>
+                        <ul>
+                            <li>Help support</li>
+                            <li>Creating Fitness </li>
+                            <li>Fitness Difference</li>
+                        </ul>
+                    </ul>
+                    </div>
+                    <div>
+                        <ul style="list-style:none;margin-top: 100px;">
+                        <li><a href="contact.html" style="color:white;text-decoration:none">conatct us</a></li>
+                        <ul>
+                            <li>Address</li>
+                            <li>Email id</li>
+                            <li>phone no.</li>
+                        </ul>
+                        </ul>
+                    </div>
+                    
+                </div><hr>
+                <div>
+                <p style="text-align:center; color:aliceblue; font-size: 27px; font-weight: bolder;font-style: italic;">Share And Download Now</p>
+                <ul style="list-style-type: none; display: flex;justify-content: space-around;" >
+                    <li><button style="font-size: 20px; font-style: italic;font-weight: bold;background-color: white;border:0px;border-radius: 12.5%;text-align: center;"><img src="images\app-store-logo-transparent-5.png" width="52px" height="30px">App Store</button></li>
+                    <li style="color:white;font-size: 20px;"><i class="bi bi-facebook"> </i>&nbsp; <i class="bi bi-instagram"> </i>&nbsp; <i class="bi bi-linkedin"> </i>&nbsp; <i class="bi bi-pinterest"> </i>&nbsp; <i class="bi bi-youtube">  </i></li>
+                <li><button style="font-size: 20px; font-style: italic;font-weight: bold;background-color: white;border:0px;border-radius: 12.5%;text-align: center;"><img src="images/Bildschirmfoto_2018-09-11_um_08-56d7d3344e2951dc.webp" width="52px" height="30px">Google Play</button></li>
+                </ul></div>
+                
+                <div style="background-color:rgb(35, 8, 61)">
+                <p style="text-align:center;color:white">&copy;2022-2024 All right  resvered FITNESS CLUB</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

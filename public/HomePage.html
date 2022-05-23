@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <title>HomePage</title>
+</head>
+<style>
+    #container{
+        display:flex;
+        flex-direction: row;
+        justify-content:space-evenly ;
+    }
+    li{
+        padding:20px;
+        font-weight: bold; 
+        font-family: Arial;
+        color:white;
+    }
+    /*section 1 main*/
+    .container1{
+                    position: relative;
+                    text-align: center;
+                    color:yellow;
+                }
+                .centered{
+                    position:absolute;
+                    
+                    top:32%;
+                    left:32%;
+                    transform: translateY(-40%,-40%);
+                }
+                .box{
+                 width:400;
+                 height:400;
+                 font-size: 45px;   
+                }
+                body{
+                    font-family: sans-serif;
+                    height: 100%;
+                    width:100%;
+                }
+                .headerone{
+                    text-decoration: none;
+                    list-style-type: none;
+                    margin:0%;
+                    padding: 0%;
+                    display: flex;
+                    margin-top: 30px;;
+                }
+                .headerone li a{
+                    font-weight: bold;
+                    font-size: 1.2em;
+                    padding: 0 15px;
+                }
+                #navbar{
+                    display:flex;
+                    
+                }
+                select{
+             padding:5px ;
+            border-radius: 5px;
+            
+            border:1px solid  #dddddd;
+            cursor: pointer;
+            border-radius: 5px; 
+            
+            outline: 0;
+            box-shadow: none;
+            border: 0!important;
+            background-color: rgb(252, 246, 246);
+            background-image: '\F3E8';
+            overflow: hidden;       
+            border-radius: .25em;    
+            flex:1;
+            cursor: pointer;
+        }
+         
+      
+        nav {
+        position:fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: black;
+        box-sizing: border-box;
+
+        align-items: center;
+        transform: .5s;
+    }      
+
+</style>
+<script>
+                      function fun(){
+    swal("Create Account","Enter your mobile number :","success", {
+  content: "input",
+})
+.then((value) => {
+  swal(`Please correct Number: ${value}`);
+});
+}
+
+
+
+    var lastScrollTop = 0;
+    navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", function () {
+        var scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            navbar.style.top = "-90px";
+        } else {
+            navbar.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    })
+
+
+    //main 1 section
+    var img=0;// start point
+            var images=[];
+            var times=4000;
+            //Images List
+            images[0]='images/image1.gif';
+            images[1]='images/image5.gif';
+            images[2]='images/image3.gif';
+            images[3]='images/image4.gif';
+            images[4]='images/image6.gif';
+            //change Image
+            function changeImg(){
+                document.slide.src=images[img];
+
+                if(img < images.length -1){
+                    img++;
+                }else{
+                    img = 0;
+                }
+                setTimeout("changeImg()",times)
+            }
+            window.onload=changeImg;
+</script>
+<body>
+    <div >
+        <header  style="background-color:black; color:white;height:90px">
+            
+          <nav id="navbar">
+            <a><img src="images/man-and-woman-fitness-silhouette-character-vector-4820662.jpg" style="text-decoration:none;height:85px;"><i style="color:rgba(226, 131, 42, 0.884);font-size: 2.8em;top: 0%;font-weight: bolder;margin-top: 0px;">CLUB</i></a>
+            <ul class="headerone">
+                <li><a href="javascript:void()" style="text-decoration:none;color:rgb(72, 72, 235)" class="bi bi-house-door">Home</a></li>
+                <li><a href="about.html" style="text-decoration:none;color:white" class="bi bi-intersect">ABOUT</a></li>
+                <li><a href="Service1.html" style="text-decoration:none;color:white" class="bi bi-asterisk">SERVICE</a></li>
+                <li><a href="contact.html" style="text-decoration:none;color:white" class="bi bi-phone">CONTACT</a></li>
+            </ul> 
+            <ul class="headerone" style="margin-top:25px ;">
+                <li>
+                    <select class="select">
+                    <option disabled selected>Location</option>
+                    
+                    <option>Bangalore</option>
+
+<option>Delhi</option><option>Hyderabad</option><option>Mumbai</option><option>Ranchi</option><option>Dehradun</option><option>Bhubaneswar</option><option>Jabalpur</option><option>Vijayawada</option><option>Chennai</option><option>Visakhapatnam</option><option>Lucknow</option><option>Agra</option><option>Kanpur</option><option>Indore</option><option>Coimbatore</option><option>Mangalore</option><option>Bhopal</option><option>Nagpur</option>
+<option>Jammu</option><option>Surat</option><option>Ludhiana</option><option>Kota</option><option>Chandigarh Tricity</option><option>Mysore</option><option>Ahmedabad</option>
+                    
+                    </select>&nbsp;&nbsp;&nbsp;
+                    <button style="background-color:white;color:black;border: 1px  solid white;padding: 5px;border-radius: 15%;font-weight: bold;font-style: italic;" >GET APP</button>
+                    
+                    <button   style="font-size:13px;margin-left:2px;color:red;font-weight:bold;background:white;border:0;border-radius: 5px;padding: 5px;;"><a href="registration.html" style="text-decoration:none;color:red">Register<span class="bi bi-person-fill " style="color:black;font-size: medium;"></span>Login</a></button>
+                    
+                </li>
+            </ul> 
+        </nav>
+        </header>
+    </div>
+    
+    
+        <main><!--section 1-->
+            <section>
+    <div class="container1">
+        <img name="slide" width="100%" height="600">
+        <div class="centered"><div class="box"><span style="color:rgb(227, 243, 7);font-weight: bolder;">This is</span><br><i style="font-weight: bold;font-size: 55px;text-decoration: underline;background: linear-gradient(90deg,#00dbde,#fc00ff);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">FITNESS CLUB</i><br>
+        <p style="font-weight: bolder;font-size:25px;font-family:Arial; text-decoration: none; color:rgb(227, 243, 7)"><i>A FITNESS movement that is worth<br> breaking a sweat for</i></p>
+        <button style="color:red; background-color: white;height:40px;width: 230px;;border:0; border-radius: 12.5%;font-weight: bolder;font-size: 15px;">EXPLORE ACCESS</button>
+        </div></div>
+    </div></section>
+
+    <section style="font-family:Arial;padding: 50px;background-color:rgb(34, 32, 32);">
+        <div style="text-align:center;">
+            <h2 style="font-size:30px;color:white">MEMBER SHIP</h2>
+            <p style="font-size:20px;width:100%;font-weight: bold;color:white">One Member Ship For All Your Fitness Need</p><br>
+            <a style="text-decoration:none;color:blue;font-size: medium;font-weight: bolder;">Learn More</a>
+        </div>
+        <div style="display: flex; flex:1;justify-content: space-around; ;margin-right: auto;
+        ; margin-top: 5%; margin-bottom: 5%;">
+            <div class="card" style="box-shadow: 0px -5px 8px 0px  yellowgreen,0px 5px 8px 0px  yellowgreen;
+            transition: 0.3s;
+            width: 30%;
+            border-radius: 5px;">
+              <img src="images/trainer.jpg" alt="Rock" style="width:70%;height:50%;border-radius:10.5%;margin-left:auto;margin-top: 2%; margin-right:auto;display: block">
+              <div class="containercardfirst">
+              <h4 style="color:white"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unlimited Access To</b></h4>
+              <ul style="color:white">
+                  <li style="color:white;font-weight: normal; padding: 5px;">At-center group classes</li>
+                  <li style="color:white;font-weight:normal;padding: 5px;">ALL ELITE  gyms</li>
+                  <li style="color:white;font-weight:normal;padding: 5px; padding-bottom: 20px;">At-home live workout</li>
+              </ul>
+              <div style="text-align:center;margin-bottom: 50px;"><button style="color:white;background-color:rgba(176, 100, 247, 0.774); border:0;border-radius: 10%;width:110px;height: 30px;font-weight: bold;font-size: medium;">Try For free</button><button style="color:red;background-color:white; border:0;border-radius: 10%;width:110px;height: 30px;font-weight: bold;font-size: medium;">Learn More</button></div>
+              </div>
+            </div>
+
+            <div class="card" style="box-shadow: 0px 2px 4px  white, 0px -2px 4px  white ;
+            transition: 0.3s;
+            width: 30%;
+            border-radius: 5px;">
+              <img src="images/cardio-for-gym-bros960x540.jpg" alt="Rock" style="width:70%;height: 50%; margin-top:2%;align-content: center;border-radius: 10.5%;margin-left:auto;margin-right:auto;display: block">
+              <div class="containercardfirst">
+              <h4 style="color:white"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unlimited Access To</b></h4>
+              <ul style="color:black">
+                  <li style="color:white;font-weight:normal; padding: 5px;">ALL PRO gyms</li>
+                  <li style="color:white;font-weight:normal;padding: 5px;">4 sessions/m at ELITE gyms & group classes</li>
+                  <li style="color:white;font-weight:normal;padding: 5px;">At-home live workouts</li>
+              </ul>
+              <div style="text-align:center;margin-bottom: 50px;"><button style="color:white;background-color:rgba(176, 100, 247, 0.774); border:0;border-radius: 10%;width:110px;height: 30px;font-weight: bold;font-size: medium;">Try For free</button><button style="color:red;background-color:white; border:0;border-radius: 10%;width:110px;height: 30px;font-weight: bold;font-size: medium;">Learn More</button></div>
+              </div>
+            </div>
+
+            <div class="card" style="box-shadow:  0px -4px 12px pink,0px 8px 12px pink;
+            transition: 0.3s;
+            width: 30%;
+            border-radius: 5px;">
+              <img src="images/ROCK-1-850x848.jpg" alt="Rock" style="width:70%;height: 50%; margin-top: 2%;border-radius:10.5%;margin-left:auto;margin-right:auto;display: block">
+              <div class="containercardfirst">
+              <h4 style="color:white"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unlimited Access To</b></h4>
+              <ul style="color:black">
+                  <li style="color:white;font-weight:normal; padding: 5px;">At home Workouts</li>
+                  <li style="color:white;font-weight:normal;padding: 5px;">Celebrity Workouts</li>
+                  <li style="color:white;font-weight:normal;padding: 5px;">Goal-Based Workouts and meditation Class</li>
+              </ul>
+              <div style="text-align:center;margin-bottom: 50px;"><button style="color:white;background-color:rgba(176, 100, 247, 0.774); border:0;border-radius: 10%;width:110px;height: 30px;font-weight: bold;font-size: medium;">Try For free</button><button style="color:red;background-color:white; border:0;border-radius: 10%;width:110px;height: 30px;font-weight: bold;font-size: medium;">Learn More</button></div>
+              </div>
+            </div>
+        </div>
+        <div style="display:flex; width: 80%; background-color:black; padding:12px;border-radius: 12.5%;margin-left: 10%;" >
+        <div class="card4" style="width:100%;color:white;">
+            <h2 style="font-size:29px;padding: 7px;">Download the most loved Fitness app</h2>
+            <p style="font-size:21px;padding:7px">Start your fitness journey with us. Join the FITNESS CLUB!</p>
+            <button style="padding:7px; font-size: 15px; font-style: italic;font-weight: bold;margin-left: 19px;background-color: white;border:0px;border-radius: 12.5%;text-align: center;"><img  src="images/app-store-logo-transparent-5.png" width="50px" height="30px">App Store</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="padding: 7px;;font-size: 15px; font-style: italic;font-weight: bold;background-color: white;border:0px;border-radius: 12.5%;text-align: center;margin: 12px;"><img src="images/Bildschirmfoto_2018-09-11_um_08-56d7d3344e2951dc.webp" width="50px" height="30px">Google Play</button>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/fitness.jpg" style="width:100%; border-radius:15.5%" >
+          </div>
+          </div>
+          <div style="text-align:center;padding-top:20px">
+               <h2 style="color:white;font-weight:bolder;font-size: 40px;">Join the FITNESS CLUB family</h2>
+          </div>
+          <div style="display: flex;justify-content:space-around;">
+              <div style="text-align:center;border-radius: 25%;background:rgb(100, 90, 90);width:40%;" >
+                  <h2 style="color:white;">Careers at FITNESS CLUB</h2>
+                  <p ><img src="images/community1.jpg" alt="community1" width="50" height="50" style="border-radius:50%;padding: 15px;">  <img src="images/community2.jpg" alt="community2" width="50" height="50" style="border-radius:50%;padding:15px">  <img src="images/community3.jpg" alt="community3" width="50" height="50" style="border-radius:50%;padding: 15px;"><br>
+                    <img src="images/community4.jpg" alt="community4" width="50" height="50" style="border-radius:50%;padding: 15px;"> <img src="images/community5.jpg" alt="community5" width="50" height="50" style="border-radius:50%;padding: 15px;box-shadow: 3px 2px 4px pink,-3px -2px 4px pink,-6px -5px 12px pink,-8px -2px 15px pink;;"></p>
+              </div>
+              <div style="text-align:center;border-radius: 25%;background:#7b9247ab;width:40%">
+                  <h2 style="font-weight: bold;background: linear-gradient(90deg,yellow,red); -webkit-background-clip: text;-webkit-text-fill-color: transparent;">FITNESS CLUB</h2><h2 style="font-weight: bold;background: linear-gradient(90deg,yellow,red); -webkit-background-clip: text;-webkit-text-fill-color: transparent;"> for Business Easy</h2>
+                <p style="font-weight:bolder;color:azure;width:85%;text-align: center;margin-left: 5%;font-size:17px;padding: 25px;" >Let's work together and make the world a healthier place</p>
+                </div>
+          </div>
+          <div style="display:flex;justify-content: space-around;">
+              <div style="text-align:center;padding: 40px;width:100%;margin-top: 10%;">
+                  <h2><i style="font-weight: bold;font-size: 55px;text-decoration: underline;background: linear-gradient(90deg,#00dbde,#fc00ff);-webkit-background-clip: text;-webkit-text-fill-color: transparent;box-shadow: 3px 4px 6px #fc00ff,-3px -4px 6px #00dbde;padding: 5px;">FITNESS CLUB</i></h2>
+                  <!-- <p style="width:60%;font-weight:bolder;color:azure;width:85%;text-align: center;margin-left: 5%;font-size:17px;padding: 25px;">At Fitness, we make group workout fun, daily food healthy & tasty, mental fitness easy with yoga & medical, meditation & lifestyle care hassle-free.#Be Better Every Day.</p> -->
+                </div>
+              <div style="width:100%;padding: 30px;margin-top: 10%;">
+                <p style="font-weight:bolder;color:azure;width:85%;text-align: center;margin-left: 5%;font-size:17px;padding: 25px;">At Fitness, we make group workout fun, daily food healthy & tasty, mental fitness easy with yoga & medical, meditation & lifestyle care hassle-free.#Be Better Every Day.</p>
+              </div>
+          </div>
+    </section>
+</main>
+<div>  
+    <footer style="background:black">
+        <div id="container">
+            <div id="">
+                <ul style="list-style:none;text-align:center;width:200px"><li style="color:rgb(81, 255, 0);font-weight: bold; font-style: italic; font-size: 20px;top:0%;"><img src="images/logo.jpg" style="border-radius:50%; width:120px; ;border: 1px solid black;text-align:center "></li>
+                    <li style="font-style:italic;">At Fitness, we make group workout fun, daily food healthy & tasty, mental fitness easy with yoga & medical, meditation & lifestyle care hassle-free.#Be Better Every Day.</li>
+                
+                </ul>
+            </div>
+            <div>
+                <ul style="list-style:none;margin-top: 100px;">
+
+                <li><a href="about.html" style="color:white;text-decoration:none">About</a></li>
+                <ul>
+                    <li>Mission</li>
+                    <li>Information</li>
+                    <li>Member & trainer</li>
+                </ul>
+                
+                </ul>
+            </div>
+            <div >
+            <ul style="list-style:none;margin-top: 100px;">
+                <li><a href="Service1.html" style="color:white;text-decoration:none"> Service</a></li>
+                <ul>
+                    <li>Help support</li>
+                    <li>Creating Fitness </li>
+                    <li>Fitness Difference</li>
+                </ul>
+            </ul>
+            </div>
+            <div>
+                <ul style="list-style:none;margin-top: 100px;">
+                <li><a href="contact.html" style="color:white;text-decoration:none">conatct us</a></li>
+                <ul>
+                    <li>Address</li>
+                    <li>Email id</li>
+                    <li>phone no.</li>
+                </ul>
+                </ul>
+            </div>
+            
+        </div><hr>
+        <div>
+        <p style="text-align:center; color:aliceblue; font-size: 27px; font-weight: bolder;font-style: italic;">Share And Download Now</p>
+        <ul style="list-style-type: none; display: flex;justify-content: space-around;" >
+            <li><button style="font-size: 20px; font-style: italic;font-weight: bold;background-color: white;border:0px;border-radius: 12.5%;text-align: center;"><img src="images\app-store-logo-transparent-5.png" width="52px" height="30px">App Store</button></li>
+            <li style="color:white;font-size: 20px;"><i class="bi bi-facebook"> </i>&nbsp; <i class="bi bi-instagram"> </i>&nbsp; <i class="bi bi-linkedin"> </i>&nbsp; <i class="bi bi-pinterest"> </i>&nbsp; <i class="bi bi-youtube">  </i></li>
+        <li><button style="font-size: 20px; font-style: italic;font-weight: bold;background-color: white;border:0px;border-radius: 12.5%;text-align: center;"><img src="images/Bildschirmfoto_2018-09-11_um_08-56d7d3344e2951dc.webp" width="52px" height="30px">Google Play</button></li>
+        </ul></div>
+        
+        <div style="background-color:rgb(35, 8, 61)">
+        <p style="text-align:center;color:white">&copy;2022-2024 All right  resvered FITNESS CLUB</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
